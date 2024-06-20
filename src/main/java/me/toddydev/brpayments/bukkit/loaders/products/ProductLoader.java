@@ -1,6 +1,8 @@
 package me.toddydev.brpayments.bukkit.loaders.products;
 
 import com.cryptomorin.xseries.XSound;
+import me.syncwrld.booter.CommonPurposeClass;
+import me.toddydev.brpayments.bukkit.BukkitMain;
 import me.toddydev.brpayments.core.cache.Caching;
 import me.toddydev.brpayments.core.model.order.gateway.Gateway;
 import me.toddydev.brpayments.core.model.order.gateway.type.GatewayType;
@@ -20,12 +22,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.bukkit.Material.BARRIER;
 
-public class ProductLoader {
+public class ProductLoader extends CommonPurposeClass {
 	
 	public static void load(JavaPlugin plugin) {
 		File dir = new File(plugin.getDataFolder().getPath() + "/products");
@@ -33,12 +37,10 @@ public class ProductLoader {
 		if (!dir.exists()) {
 			dir.mkdirs();
 			
-			File file = new File(dir.getPath(), "example.yml");
+			File file = new File(dir, "example.yml");
 			try {
-				file.createNewFile();
-				InputStream r = plugin.getResource("products/produto.yml");
-				YamlConfiguration yaml = YamlConfiguration.loadConfiguration(r);
-				yaml.save(file);
+				InputStream resource = plugin.getResource("products/example.yml");
+				Files.copy(resource, file.toPath());
 			} catch (Exception e) {
 				plugin.getServer().getConsoleSender().sendMessage("§b[NeoPayments] Não foi possível criar um arquivo de exemplo.");
 			}
