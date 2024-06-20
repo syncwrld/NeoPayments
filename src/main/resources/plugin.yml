@@ -1,6 +1,8 @@
-name: BRPayments
-version: '${project.version}'
-main: me.toddydev.bukkit.BukkitMain
-author: Toddy
+name: NeoPayments
+version: '0.1'
+main: me.toddydev.brpayments.bukkit.BukkitMain
+authors: [ syncwrld, ToddyDev ]
 softdepend:
   - PlaceholderAPI
+
+api-version: 1.13

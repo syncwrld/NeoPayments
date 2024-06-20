@@ -1,19 +1,25 @@
 database:
-  host: 127.0.0.1
-  port: 3306
-  username: user
-  password: password
-  database: database
+  # Disponíveis: SQLite, MySQL #
+  type: 'SQLite'
+  sqlite:
+    file: 'storage/database.sql'
+  mysql:
+    host: 'localhost'
+    port: 3306
+    username: 'root'
+    password: ''
+    database: 'db_neopayments'
 
+# Gateways de pagamento #
 gateways:
-  MERCADO_PAGO:
+  mercado-pago:
     authentication: "token"
 
 discord:
   token: "TOKEN"
   channels:
     sell: "CHANNEL_ID"
-
+  # Embeds das mensagens que serão enviadas no Discord #
   embeds:
     sell:
       color: BLACK
@@ -24,8 +30,10 @@ discord:
         price: "Custo"
         rate: "Taxa"
       footer: "Adquirido por {player} em {date}"
+
+# Categorias de produtos que podem ser vendidos #
 categories:
-  Example:
+  example:
     name: "Categoria Exemplo"
     description:
       - ""

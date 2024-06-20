@@ -21,8 +21,8 @@ actions:
   COLLECT:
     sound: LEVEL_UP
     message: |
-        &aVocê coletou uma picareta de diamante!
-        &aAgora você pode quebrar blocos de obsidiana!
+      &aVocê coletou uma picareta de diamante!
+      &aAgora você pode quebrar blocos de obsidiana!
     action-bar: "&eO seu pedido foi &bentregue&e!"
     screen:
       title: "&b&lPEDIDO ENTREGUE"
