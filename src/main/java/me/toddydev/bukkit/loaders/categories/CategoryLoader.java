@@ -13,7 +13,7 @@ public class CategoryLoader {
 
             if (material == null) {
                 material = Material.BARRIER;
-                plugin.getServer().getConsoleSender().sendMessage("[BRPayments] Invalid material for category " + s + "! Changed to BARRIER.");
+                plugin.getServer().getConsoleSender().sendMessage("[NeoPayments] Invalid material for category " + s + "! Changed to BARRIER.");
             }
 
             Category category = Category.builder()

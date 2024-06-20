@@ -57,7 +57,7 @@ public class MPService {
             order.setPaymentId(o.get("id").getAsString());
             return order;
         } catch (Exception e) {
-            Bukkit.getConsoleSender().sendMessage("[BRPayments] Ocorreu um erro ao tentar criar um pagamento com o Mercado Pago: " + e.getLocalizedMessage());
+            Bukkit.getConsoleSender().sendMessage("[NeoPayments] Ocorreu um erro ao tentar criar um pagamento com o Mercado Pago: " + e.getLocalizedMessage());
             return null;
         }
     }
